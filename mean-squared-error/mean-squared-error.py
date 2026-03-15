@@ -1,9 +1,7 @@
 import numpy as np
 
 def mean_squared_error(y_pred, y_true):
-    error = 0
-    n = len(y_true)
-    for i ,j in zip(y_pred, y_true):
-        error += (j-i)**2
-
-    return error/n
+    y_true = np.array(y_true)
+    y_pred = np.array(y_pred)
+    error = (y_true-y_pred)**2
+    return np.mean(error)
